@@ -14,3 +14,4 @@ All notable changes to the HERA Initiative web platform will be documented in th
 - Add vision, mission, and core objectives section.
 - Integrate contact form and social media links.
 - Deleted the name: Community Based Organization. Kilifi;  that was on the first page of the website. 
+- Minimized the spacing between the sections to bring out a clean look of the website
