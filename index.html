@@ -172,6 +172,24 @@
   .mv-card h3 { color: #fff; font-size: 1.2rem; }
   .mv-block + .mv-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15); }
 
+  /* Highlight Banner in About Section */
+  .goal-highlight {
+    background: #fff;
+    border-left: 5px solid var(--hera-blue);
+    padding: 20px 24px;
+    border-radius: 0 16px 16px 0;
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+  }
+  .goal-highlight p {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--hera-navy);
+    line-height: 1.4;
+  }
+
   /* ---------- Thematic Areas ---------- */
   .thematic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
   .thematic-card {
@@ -296,13 +314,23 @@
     </div>
     <div class="about-grid">
       <div>
-        <p style="font-size: 1.08rem; line-height: 1.7; color: var(--hera-ink);">
-          HERA Initiative is a grassroots CBO committed to advancing Health, Equity, Rights, Advocacy and Climate Justice through community-led health interventions. We believe that good health is not only about access to healthcare. It is also about equality, dignity, human rights, a safe environment, and the ability of communities to participate in decisions affecting their wellbeing.
+        <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 12px;">
+          HERA Initiative is a grassroots CBO committed to advancing Health, Equity, Rights, Advocacy and Climate Justice through community-led health interventions.
         </p>
-        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--hera-navy); font-weight: 600; margin-top: 12px;">
-          Our work connects these issues around one central goal: Better health and wellbeing for underserved communities.
+        <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 12px;">
+          We believe that good health is not only about access to healthcare.
         </p>
+        <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 16px;">
+          It is also about equality, dignity, human rights, a safe environment, and the ability of communities to participate in decisions affecting their wellbeing.
+        </p>
+        
+        <div class="goal-highlight">
+          <p>
+            Our work connects these issues around one central goal: <span style="color: var(--hera-blue);">Better health and wellbeing for underserved communities.</span>
+          </p>
+        </div>
       </div>
+      
       <div class="mv-card">
         <div class="mv-block">
           <span class="eyebrow" style="color: var(--hera-orange);">Our Mission</span>
