@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Official HERA Brand Palette (Extracted from Logo & Flyer) */
+    /* Official HERA Brand Palette */
     --hera-navy: #002B66;
     --hera-navy-deep: #001A40;
     --hera-blue: #0055B8;
@@ -119,22 +119,61 @@
   nav.links a { font-size: 0.92rem; font-weight: 600; color: var(--hera-navy); }
   nav.links a:hover { color: var(--hera-blue); }
   
-  /* ---------- Hero Section ---------- */
+  /* ---------- Hero Section (Overlapping Effect) ---------- */
   .hero {
+    position: relative;
+    overflow: hidden;
     background: radial-gradient(circle at 90% -10%, rgba(106, 27, 123, 0.08), transparent 50%),
                 radial-gradient(circle at 10% 40%, rgba(0, 85, 184, 0.08), transparent 50%),
                 var(--hera-paper);
-    padding: 90px 0 70px;
+    padding: 80px 0 60px;
   }
-  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-  .hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.5rem); font-weight: 700; }
-  .hero h1 em { font-style: normal; color: var(--hera-blue); }
-  .hero .lede { font-size: 1.15rem; margin-top: 18px; max-width: 52ch; }
-  .hero-cta { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
-  .hero-card {
-    background: #fff; border: 1px solid rgba(0, 43, 102, 0.1);
-    border-radius: 20px; padding: 32px; box-shadow: var(--shadow);
-    border-top: 6px solid var(--hera-blue);
+  .hero-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 10;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--hera-blue);
+  }
+  .hero .lede {
+    font-size: 1.15rem;
+    margin-top: 18px;
+    max-width: 48ch;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+  .hero-cta { display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+  
+  .hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: -80px;
+    z-index: 2;
+  }
+  .hero-image-wrapper img {
+    max-width: 115%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 20px 30px rgba(0, 43, 102, 0.12));
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   }
 
   /* ---------- Section Headers ---------- */
@@ -221,9 +260,12 @@
   .footer-text { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
 
   /* ---------- Responsive Adjustments ---------- */
-  @media (max-width: 850px) {
-    .hero-grid, .about-grid, .mama-banner { grid-template-columns: 1fr; }
-    nav.links { display: none; } /* Add JS mobile menu toggle if needed */
+  @media (max-width: 900px) {
+    .hero-container { grid-template-columns: 1fr; }
+    .hero-image-wrapper { margin-left: 0; order: -1; }
+    .hero-image-wrapper img { max-width: 80%; }
+    .about-grid, .mama-banner { grid-template-columns: 1fr; }
+    nav.links { display: none; }
   }
 </style>
 </head>
@@ -233,7 +275,6 @@
 <header>
   <div class="nav-wrap container">
     <a href="#home" class="brand">
-      <!-- Standard Logo Placeholder (Replace src with real SVG/PNG) -->
       <div class="brand-text">
         HERA INITIATIVE
         <span>Health • Equity • Rights • Advocacy</span>
@@ -252,25 +293,22 @@
   </div>
 </header>
 
-<!-- 1. HOME / HERO SECTION -->
+<!-- 1. HOME / HERO SECTION WITH OVERLAPPING GRAPHIC -->
 <section id="home" class="hero">
-  <div class="container hero-grid">
+  <div class="container hero-container">
     <div class="hero-copy">
       <span class="eyebrow">Health • Equity • Rights • Advocacy • Climate Justice</span>
-      <h1>Healthy Communities.<br>Equal Rights. <em>A Sustainable Future.</em></h1>
-      <p class="lede">HERA Initiative is a community-based organization (CBO) working with underserved communities to improve health, promote equity and protect health-related rights.</p>
+      <h1>Healthy Communities.<br>Equal Rights.<br><em>A Sustainable Future.</em></h1>
+      <p class="lede">HERA Initiative is a community-based organization (CBO) working alongside underserved communities to improve health, promote equity, and protect health-related rights.</p>
       <div class="hero-cta">
         <a href="#programs" class="btn btn-primary">Our Work</a>
         <a href="#get-involved" class="btn btn-outline">Partner With Us</a>
         <a href="#donate" class="btn btn-donate">Support HERA</a>
       </div>
     </div>
-    <div class="hero-card">
-      <h3>Building Healthier, Fairer & Resilient Communities</h3>
-      <p>We focus on adolescents, young people, women, pregnant teens, young mothers, and vulnerable communities facing barriers to essential health information, services, and support.</p>
-      <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #eee;">
-        <strong>Our Approach:</strong> Community education, outreach, referrals, advocacy, and sustainable local partnerships.
-      </div>
+    
+    <div class="hero-image-wrapper">
+      <img src="ChatGPT Image Aug 10, 2026, 10_19_21 AM.png" alt="Pregnant mother illustration representing HERA Maternal Health Initiative">
     </div>
   </div>
 </section>
@@ -316,7 +354,6 @@
       <p>Health is our central identity, powered through four vital pillars and climate resilience.</p>
     </div>
     <div class="thematic-grid">
-      <!-- Health -->
       <div class="thematic-card border-health">
         <span class="eyebrow">🩺 Pillar 01</span>
         <h3>HEALTH</h3>
@@ -328,7 +365,6 @@
         </ul>
       </div>
 
-      <!-- Equity -->
       <div class="thematic-card border-equity">
         <span class="eyebrow">⚖️ Pillar 02</span>
         <h3>HEALTH EQUITY</h3>
@@ -340,7 +376,6 @@
         </ul>
       </div>
 
-      <!-- Rights -->
       <div class="thematic-card border-rights">
         <span class="eyebrow">🕊️ Pillar 03</span>
         <h3>HEALTH RIGHTS</h3>
@@ -352,7 +387,6 @@
         </ul>
       </div>
 
-      <!-- Advocacy -->
       <div class="thematic-card border-advocacy">
         <span class="eyebrow">📢 Pillar 04</span>
         <h3>HEALTH ADVOCACY</h3>
@@ -364,7 +398,6 @@
         </ul>
       </div>
 
-      <!-- Climate Justice -->
       <div class="thematic-card border-climate">
         <span class="eyebrow">🌱 Pillar 05</span>
         <h3>CLIMATE JUSTICE & HEALTH</h3>
@@ -383,9 +416,8 @@
 <section id="programs" class="section bg-light">
   <div class="container">
     <div class="sec-head">
-      <span class="eyebrow">4. Priority Groups & 5. Flagship Programs</span>
-      <h2>Our Focus & Flagship Programs</h2>
-      <p>Delivering targeted community interventions through clear, structured flagship initiatives.</p>
+      <span class="eyebrow" style="font-weight: bold; font-size: 0.85rem;">4. Our Focus & Flagship Programs</span>
+      <p style="margin-top: 8px;">Delivering targeted community interventions through clear, structured flagship initiatives.</p>
     </div>
 
     <h4 style="margin-bottom: 16px;">Our Priority Groups</h4>
@@ -416,7 +448,6 @@
         <p>Empowering adolescents with accurate reproductive health education and safe spaces for decision-making.</p>
       </div>
       
-      <!-- Highlighted Mama Care Program -->
       <div class="card-simple mama-care-card">
         <span class="eyebrow" style="color: var(--hera-pink);">Program 02 • Featured</span>
         <h3 style="color: var(--hera-pink);">Mama Care Program</h3>
