@@ -164,12 +164,13 @@
   .center { text-align: center; margin-left: auto; margin-right: auto; }
 
   /* ---------- About Section ---------- */
-  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: start; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: stretch; }
   .mv-card {
     background: var(--hera-navy); color: #fff;
-    border-radius: 20px; padding: 32px; position: relative; overflow: hidden;
+    border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between;
   }
-  .mv-card h3 { color: #fff; font-size: 1.2rem; }
+  .mv-card h3 { color: #fff; font-size: 1.25rem; }
   .mv-block + .mv-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15); }
 
   /* Highlight Banner in About Section */
@@ -184,7 +185,7 @@
   .goal-highlight p {
     margin: 0;
     font-family: 'Fraunces', serif;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--hera-navy);
     line-height: 1.4;
@@ -333,12 +334,12 @@
       
       <div class="mv-card">
         <div class="mv-block">
-          <span class="eyebrow" style="color: var(--hera-orange);">Our Mission</span>
+          <span class="eyebrow" style="color: #FFD56B;">Our Mission</span>
           <h3>To improve health & wellbeing</h3>
           <p>By promoting equitable access to health information, protecting health-related rights, strengthening community participation, and addressing environmental factors affecting health.</p>
         </div>
         <div class="mv-block">
-          <span class="eyebrow" style="color: var(--hera-green);">Our Vision</span>
+          <span class="eyebrow" style="color: #4CAF50;">Our Vision</span>
           <h3>Empowered & resilient communities</h3>
           <p>Where everyone can access quality healthcare, enjoy their human rights, and live with dignity.</p>
         </div>
@@ -374,7 +375,7 @@
       </div>
 
       <div class="thematic-card border-equity">
-        <span class="eyebrow">⚖️ Pillar 02</span>
+        <span class="eyebrow">省 Pillar 02</span>
         <h3>HEALTH EQUITY</h3>
         <p><strong>Healthcare for those left behind.</strong> Addressing social, geographical, and economic barriers to healthcare access.</p>
         <ul>
