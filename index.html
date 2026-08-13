@@ -164,14 +164,32 @@
   .center { text-align: center; margin-left: auto; margin-right: auto; }
 
   /* ---------- About Section ---------- */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: stretch; }
+  .about-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 36px; 
+    align-items: stretch; 
+  }
+  .about-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .mv-card {
-    background: var(--hera-navy); color: #fff;
-    border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: space-between;
+    background: var(--hera-navy); 
+    color: #fff;
+    border-radius: 20px; 
+    padding: 32px; 
+    position: relative; 
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    height: 100%;
   }
   .mv-card h3 { color: #fff; font-size: 1.25rem; }
-  .mv-block + .mv-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .mv-card p.card-body-text { color: rgba(255, 255, 255, 0.95) !important; font-size: 0.98rem; }
+  .mv-block + .mv-block { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
 
   /* Highlight Banner in About Section */
   .goal-highlight {
@@ -314,16 +332,18 @@
       <span class="eyebrow">2. About Us</span>
     </div>
     <div class="about-grid">
-      <div>
-        <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 12px;">
-          HERA Initiative is a grassroots CBO committed to advancing Health, Equity, Rights, Advocacy and Climate Justice through community-led health interventions.
-        </p>
-        <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 12px;">
-          We believe that good health is not only about access to healthcare.
-        </p>
-        <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 16px;">
-          It is also about equality, dignity, human rights, a safe environment, and the ability of communities to participate in decisions affecting their wellbeing.
-        </p>
+      <div class="about-left-col">
+        <div>
+          <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 12px;">
+            HERA Initiative is a grassroots CBO committed to advancing Health, Equity, Rights, Advocacy and Climate Justice through community-led health interventions.
+          </p>
+          <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 12px;">
+            We believe that good health is not only about access to healthcare.
+          </p>
+          <p style="font-size: 1.05rem; line-height: 1.6; color: var(--hera-ink); margin-bottom: 16px;">
+            It is also about equality, dignity, human rights, a safe environment, and the ability of communities to participate in decisions affecting their wellbeing.
+          </p>
+        </div>
         
         <div class="goal-highlight">
           <p>
@@ -334,18 +354,18 @@
       
       <div class="mv-card">
         <div class="mv-block">
-          <span class="eyebrow" style="color: #FFD56B;">Our Mission</span>
+          <span class="eyebrow" style="color: #FFB2DD;">Our Mission</span>
           <h3>To improve health & wellbeing</h3>
-          <p>By promoting equitable access to health information, protecting health-related rights, strengthening community participation, and addressing environmental factors affecting health.</p>
+          <p class="card-body-text">By promoting equitable access to health information, protecting health-related rights, strengthening community participation, and addressing environmental factors affecting health.</p>
         </div>
         <div class="mv-block">
-          <span class="eyebrow" style="color: #4CAF50;">Our Vision</span>
+          <span class="eyebrow" style="color: #FFB2DD;">Our Vision</span>
           <h3>Empowered & resilient communities</h3>
-          <p>Where everyone can access quality healthcare, enjoy their human rights, and live with dignity.</p>
+          <p class="card-body-text">Where everyone can access quality healthcare, enjoy their human rights, and live with dignity.</p>
         </div>
         <div class="mv-block">
           <span class="eyebrow" style="color: #FFB2DD;">Our Core Values</span>
-          <p style="color: #fff; font-weight: 600; margin-bottom: 0;">
+          <p class="card-body-text" style="font-weight: 600; margin-bottom: 0;">
             Equity • Dignity • Inclusion • Integrity • Accountability • Compassion • Community Leadership
           </p>
         </div>
@@ -375,7 +395,7 @@
       </div>
 
       <div class="thematic-card border-equity">
-        <span class="eyebrow">省 Pillar 02</span>
+        <span class="eyebrow">⚖️ Pillar 02</span>
         <h3>HEALTH EQUITY</h3>
         <p><strong>Healthcare for those left behind.</strong> Addressing social, geographical, and economic barriers to healthcare access.</p>
         <ul>
