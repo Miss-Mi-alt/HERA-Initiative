@@ -15,3 +15,4 @@ All notable changes to the HERA Initiative web platform will be documented in th
 - Integrate contact form and social media links.
 - Deleted the name: Community Based Organization. Kilifi;  that was on the first page of the website. 
 - Minimized the spacing between the sections to bring out a clean look of the website
+- Replanned the whole website and updated the HTML file. changed from using claude to using Gemini pro. 
